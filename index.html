@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="coming-soon">
+        <div>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                <form id='form' action="/" method="get">
+                    <div class="error"></div>
+                    <div>
+                        <label for="name">NAME</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div>
+
+                        <label for="name">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div>
+
+                        <label for="name">Password</label>
+                        <input id="password" name="password" type="password">
+                    </div>
+
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+
+            <span style="font-size:30px;cursor:pointer;" onclick="openNav()">contact us</span>
+            <h1>Deadline</h1>
+            <!-- <h2 id="chahome">We are coming soon</h2> -->
+            <p id="siteContent">
+                Welcome ! <br>
+                You can choose any language using the
+                buttons above! <br>
+            </p>
+
+
+            <button onclick="changeLanguage('eng')">
+                Change to English </button>
+            <button onclick="changeLanguage('es')">
+                Change to Spanish
+            </button>
+            <button onclick="changeLanguage('hin')">
+                Change to Hindi
+            </button>
+
+
+            <div class="countdown">
+                <div class="container-day">
+                    <h3 class="day">Time</h3>
+                    <h3>Day</h3>
+                </div>
+                <div class="container-hour">
+                    <h3 class="hour">Time</h3>
+                    <h3>hour</h3>
+                </div>
+                <div class="container-minute">
+                    <h3 class="minute">Time</h3>
+                    <h3>minute</h3>
+                </div>
+                <div class="container-second">
+                    <h3 class="second">Time</h3>
+                    <h3>second</h3>
+                </div>
+            </div>
+          
+
+
+        </div>
+        
+
+
+    </section>
+    <div class="logo">
+        <img src="https://img.icons8.com/office/40/000000/facebook-new.png" />
+        <img src="https://img.icons8.com/office/40/000000/facebook-new.png" />
+        <img src="https://img.icons8.com/office/40/000000/facebook-new.png" />
+    </div>
+    <script src="./main.js"></script>
+    <script>
+        // Create a function to change
+        // the hash value of the page
+        function changeLanguage(lang) {
+            location.hash = lang;
+            location.reload();
+        }
+
+        // Define the language reload anchors
+        var language = {
+            eng: {
+                welcome: "Welcome  " +
+                    "Portal! You can choose any language " +
+                    "using the buttons above!"
+            },
+            es: {
+                welcome: "¡Bienvenido ! " +
+                    "¡Puedes elegir cualquier idioma usando " +
+                    "los botones de arriba!"
+
+            },
+            hin: {
+                welcome: " पोर्टल पर आपका स्वागत है! " +
+                    "आप ऊपर दिए गए बटन का उपयोग करके किसी भी "
+
+            }
+        };
+
+        // Check if a hash value exists in the URL
+        if (window.location.hash) {
+
+            // Set the content of the webpage
+            // depending on the hash value
+            if (window.location.hash == "#es") {
+                siteContent.textContent =
+                    language.es.welcome;
+            }
+            else if (window.location.hash == "#hin") {
+                siteContent.textContent =
+                    language.hin.welcome;
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100vw";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
+
+</body>
+
+</html>
